@@ -199,6 +199,69 @@ See `/screenshots` for:
 
 --- 
 
+## Phase 10 — SOC Dashboarding
+
+* Added Splunk-style dashboard visualizations
+
+* Added SOC activity monitoring
+
+* Added endpoint activity analytics
+
+---
+
+## Phase 11 — Machine Learning Anomaly Detection
+
+* Added Isolation Forest anomaly detection
+
+* Added behavioral anomaly scoring
+
+* Added suspicious event classification
+
+---
+
+## Phase 12 — Cloud Security Simulation
+
+* Added simulated cloud IAM security events
+
+* Added cloud audit monitoring
+
+* Added cloud identity risk scenarios
+
+---
+
+## Phase 13 — Identity Attack Path Analysis
+
+* Added attack chain simulation
+
+* Added identity relationship analysis
+
+* Added privilege escalation path modeling
+
+---
+
+## Phase 14 — ATT&CK Heatmap Visualization
+
+* Added MITRE ATT&CK coverage mapping
+
+* Added heatmap-style analytics
+
+* Added technique coverage scoring
+
+
+---
+
+## Phase 15 — Executive Reporting
+
+* Added executive security reporting
+
+* Added SOC KPI reporting
+
+* Added incident trend reporting
+
+* Added security posture analytics
+ 
+---
+
 # Screenshots
 
 Security monitoring and analytics visualizations are available in the `/screenshots` directory, including:
