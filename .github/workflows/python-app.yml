@@ -1,0 +1,42 @@
+name: SOC Simulation CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # =========================
+    # CORE SOC SIMULATION PIPELINE
+    # =========================
+
+    - name: Run Phase 16 - Identity Federation
+      run: python phase16_identity_federation.py
+
+    - name: Run Phase 17 - Kubernetes Security
+      run: python phase17_kubernetes_security.py
+
+    - name: Run Phase 18 - EDR Simulation
+      run: python phase18_edr_simulation.py
+
+    - name: Run Phase 19 - Purple Team
+      run: python phase19_purple_team.py
+
+    - name: Run Phase 20 - AI SOC Analyst
+      run: python phase20_ai_soc_analyst.py

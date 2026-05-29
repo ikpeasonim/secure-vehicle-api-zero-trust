@@ -330,6 +330,101 @@ This system simulates a full SOC pipeline:
 - Strategic security analytics
 
 ---
+## Phase 16 — Identity Federation + SSO
+
+### Implementation
+
+* JWT identity federation
+* Token validation workflows
+* MFA simulation
+* Session identity verification
+* Identity trust modeling
+
+### Security Concepts
+
+* Identity federation
+* OAuth-style authentication
+* SSO trust boundaries
+* Token abuse detection
+* Session security
+
+---
+
+## Phase 17 — Kubernetes Security
+
+### Implementation
+
+* Kubernetes audit event simulation
+* RBAC privilege escalation detection
+* Container runtime monitoring
+* Service account abuse detection
+
+### Security Concepts
+
+* Container security
+* Kubernetes RBAC
+* Cloud-native security
+* Runtime monitoring
+* Cluster attack analysis
+
+---
+
+## Phase 18 — EDR Simulation
+
+### Implementation
+
+* Endpoint telemetry simulation
+* Process execution monitoring
+* Registry persistence detection
+* Malware execution simulation
+
+### Security Concepts
+
+* Endpoint Detection and Response
+* Host telemetry analytics
+* Behavioral monitoring
+* Persistence analysis
+* Threat correlation
+
+---
+
+## Phase 19 — Purple Team Automation
+
+### Implementation
+
+* ATT&CK adversary emulation
+* Detection validation workflows
+* Technique replay simulation
+* Detection coverage analysis
+
+### Security Concepts
+
+* Purple teaming
+* Adversary emulation
+* Detection validation
+* ATT&CK testing
+* SOC readiness analysis
+
+---
+
+## Phase 20 — AI-Assisted SOC Analyst
+
+### Implementation
+
+* AI alert summarization
+* Automated triage recommendations
+* Threat prioritization
+* AI-assisted investigation workflows
+
+### Security Concepts
+
+* AI security operations
+* LLM-assisted SOC workflows
+* Security automation
+* Analyst augmentation
+* AI-assisted threat analysis
+
+---
 
 # Screenshots
 
