@@ -389,11 +389,13 @@ phase12_cloud_security.py
 phase13_attack_path_analysis.py
 phase14_attack_heatmap.py
 phase15_executive_reporting.py
+```
+
 ---
 
 ## Visualization Layer
 
-- visualizations.py — Original visualization engine  
+- visualizations.py — Original visualization engine
 - visualizations_v2.py — Enhanced version with PNG export support
 
 ---
