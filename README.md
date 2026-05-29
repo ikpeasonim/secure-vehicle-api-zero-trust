@@ -176,17 +176,17 @@ See `/screenshots` for:
 
 ## Phase 9 — SOAR Automation + Automated Containment
 
-Added SOAR-style automation workflows
+* Added SOAR-style automation workflows
 
-Added automated containment engine
+* Added automated containment engine
 
-Added automated response playbooks
+* Added automated response playbooks
 
-Added identity quarantine simulation
+* Added identity quarantine simulation
 
-Added automated API key disablement
+* Added automated API key disablement
 
-Added containment event reporting
+* Added containment event reporting
 
 ### SOAR Concepts
 
