@@ -754,25 +754,24 @@ This project is licensed under the MIT License.
 
 # 👤 Author
 
-## Chukwuemeke Ikpeasonim
-
+**Chukwuemeke Ikpeasonim**  
 Cybersecurity Engineer | SOC Analyst | Detection Engineering Enthusiast
 
-LinkedIn:
-https://www.linkedin.com/in/chukwuemeke-ikpeasonim/
+LinkedIn: www.linkedin.com/in/chukwuemeke-ikpeasonim  
+GitHub: github.com/switice
 
 This project was developed independently as a cybersecurity engineering and SOC simulation platform focused on:
 
-* Zero Trust Architecture
-* Detection Engineering
-* SIEM & UEBA Analytics
-* Threat Hunting
-* SOAR Automation
-* Cloud Security
-* Identity Security
-* Kubernetes Security
-* EDR Simulation
-* AI-Assisted Security Operations
+- Zero Trust Architecture
+- Detection Engineering
+- SIEM & UEBA Analytics
+- Threat Hunting
+- SOAR Automation
+- Cloud Security
+- Identity Security
+- Kubernetes Security
+- EDR Simulation
+- AI-Assisted Security Operations
   
 ---
 
