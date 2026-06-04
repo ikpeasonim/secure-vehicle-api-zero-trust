@@ -9,7 +9,7 @@
 
 ---
 
-A cybersecurity engineering project that demonstrates the evolution of a vulnerable API into a modern Security Operations Center (SOC) ecosystem through Zero Trust architecture, detection engineering, UEBA analytics, threat intelligence correlation, SOAR automation, cloud security monitoring, and AI-assisted security operations.
+A cybersecurity engineering portfolio project demonstrating the evolution of a vulnerable API into a Zero Trust, SOC-driven security ecosystem through authentication, authorization, detection engineering, SIEM analytics, threat intelligence correlation, SOAR automation, cloud security monitoring, and AI-assisted security operations.
 
 ---
 # 🚀 Overview
@@ -748,25 +748,22 @@ The project simulates how modern Security Operations Centers evolve from vulnera
 
 # 📜 License
 
-This project is licensed under the MIT License.
-
-📜 License
-
-👤 Project Collaboration
-
-⭐ Security Engineering Outcomes
+This project is licensed under the MIT License. See the LICENSE.txt file for additional details.
 
 ---
 
 # 👤 Project Collaboration
 
-**Chukwuemeke Ikpeasonim**  
+### Chukwuemeke Ikpeasonim
 Cybersecurity Engineer | SOC Operations | Detection Engineering | Zero Trust Security
 
-**Christina James**  
+LinkedIn: www.linkedin.com/in/chukwuemeke-ikpeasonim  
+GitHub: github.com/switice
+
+### Christina James
 Cybersecurity Professional | Security Architecture | Identity & Access Management
 
-This project was developed through a collaborative effort between Chukwuemeke Ikpeasonim and Christina James. The collaboration included cybersecurity architecture discussions, security design reviews, Zero Trust strategy development, identity-centric security concepts, detection engineering approaches, and overall project direction.
+This project was developed through collaboration between Chukwuemeke Ikpeasonim and Christina James. The collaboration included cybersecurity architecture discussions, security design reviews, Zero Trust strategy development, identity-centric security concepts, detection engineering methodologies, and overall project direction.
 
 The resulting platform demonstrates the evolution of a vulnerable API environment into a mature SOC-oriented security ecosystem encompassing authentication, authorization, SIEM analytics, UEBA, threat hunting, SOAR automation, cloud security monitoring, identity security, EDR simulation, Kubernetes security, and AI-assisted security operations.
   
