@@ -797,6 +797,7 @@ The resulting platform demonstrates the progression of a vulnerable API environm
 The project serves as a practical cybersecurity engineering portfolio that showcases the evolution of security controls, detection capabilities, and operational workflows across a modern Zero Trust security model while emphasizing real-world cybersecurity engineering practices.
 
 This collaboration reflects a shared commitment to advancing cybersecurity education, defensive security engineering, modern security operations, and the practical application of Zero Trust principles in simulated enterprise environments.
+
 ---
 
 # ⭐ Security Engineering Outcomes
