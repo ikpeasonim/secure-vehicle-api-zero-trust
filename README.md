@@ -759,6 +759,7 @@ This project is licensed under the MIT License. See the LICENSE.txt file for add
 Cybersecurity Engineer | SOC Operations | Detection Engineering | Zero Trust Security
 
 LinkedIn: www.linkedin.com/in/chukwuemeke-ikpeasonim
+
 GitHub: github.com/switice
 
 ## Christina James
