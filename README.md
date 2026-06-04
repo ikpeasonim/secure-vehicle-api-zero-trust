@@ -752,22 +752,38 @@ This project is licensed under the MIT License. See the LICENSE.txt file for add
 
 ---
 
-# 👤 Project Collaboration
+# Project Collaboration
 
-### Chukwuemeke Ikpeasonim
+## Chukwuemeke Ikpeasonim
+
 Cybersecurity Engineer | SOC Operations | Detection Engineering | Zero Trust Security
 
-LinkedIn: www.linkedin.com/in/chukwuemeke-ikpeasonim  
+LinkedIn: [www.linkedin.com/in/chukwuemeke-ikpeasonim](http://www.linkedin.com/in/chukwuemeke-ikpeasonim)
 GitHub: github.com/switice
 
-### Christina James
+## Christina James
+
 Cybersecurity Professional | Security Architecture | Identity & Access Management
 
-LinkedIn: www.linkedin.com/in/christinanjames
+LinkedIn: [www.linkedin.com/in/christinanjames](http://www.linkedin.com/in/christinanjames)
 
-This project was developed through collaboration between Chukwuemeke Ikpeasonim and Christina James. The collaboration included cybersecurity architecture discussions, security design reviews, Zero Trust strategy development, identity-centric security concepts, detection engineering methodologies, and overall project direction.
+## Collaboration Acknowledgment
 
-The resulting platform demonstrates the evolution of a vulnerable API environment into a mature SOC-oriented security ecosystem encompassing authentication, authorization, SIEM analytics, UEBA, threat hunting, SOAR automation, cloud security monitoring, identity security, EDR simulation, Kubernetes security, and AI-assisted security operations.
+This project was collaboratively designed and developed by Chukwuemeke Ikpeasonim and Christina James. The partnership combined expertise across security operations, security architecture, identity and access management, detection engineering, and Zero Trust security principles.
+
+Key areas of collaboration included:
+
+* Security architecture and platform design
+* Zero Trust strategy and implementation concepts
+* Identity-centric security controls and access governance
+* Detection engineering and threat detection methodologies
+* Security design reviews and technical validation
+* SOC workflows, monitoring, and incident response concepts
+* Overall project planning, direction, and continuous improvement
+
+The resulting platform demonstrates the progression of a vulnerable API environment into a comprehensive SOC-focused security ecosystem. The project incorporates authentication and authorization controls, SIEM analytics, UEBA capabilities, threat hunting workflows, SOAR automation, cloud security monitoring, identity security, EDR simulation, Kubernetes security monitoring, and AI-assisted security operations.
+
+This collaboration reflects a shared commitment to advancing practical cybersecurity education, modern defensive security practices, and real-world security operations capabilities.
   
 ---
 
