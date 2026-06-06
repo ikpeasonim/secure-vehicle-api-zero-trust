@@ -58,3 +58,7 @@ jobs:
             dashboard_health.html
             dashboard_events.html
             dashboard_attack_vectors.html
+
+- name: Fail CI on LOW SOC Health
+  run: |
+    python -c "import json; exit(1) if json.load(open('soc_metrics.json'))['soc_health_score'] < 40 else print('SOC Health OK')"
