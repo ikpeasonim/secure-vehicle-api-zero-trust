@@ -5,25 +5,45 @@ from collections import Counter
 
 EVENT_FILES = glob.glob("soc_events.json*")
 
+
 def load_events():
     events = []
+
     for file in EVENT_FILES:
         try:
-            if file.endswith(".json"):
-                with open(file) as f:
-                    data = json.load(f)
-                    events.extend(data if isinstance(data, list) else [data])
-
-            elif file.endswith(".jsonl"):
-                with open(file) as f:
+            with open(file) as f:
+                if file.endswith(".jsonl"):
                     for line in f:
-                        events.append(json.loads(line))
-        except Exception:
-            continue
+                        if line.strip():
+                            events.append(json.loads(line))
+                else:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        events.extend(data)
+                    else:
+                        events.append(data)
+        except Exception as e:
+            print(f"[WARN] failed loading {file}: {e}")
+
     return events
 
 
+# ✅ MUST exist BEFORE usage
 events = load_events()
+
+# -----------------------------
+# NORMALIZATION (IMPORTANT FIX)
+# -----------------------------
+for e in events:
+    e["timestamp"] = e.get("last_event_time")
+    e["type"] = (
+        "incident" if e.get("severity") in ["HIGH", "CRITICAL"]
+        else "alert" if e.get("severity") == "MEDIUM"
+        else "event"
+    )
+    e["attack_vector"] = (e.get("signals") or ["unknown"])[0]
+    e["mitre"] = "T0000"
+
 
 # -----------------------------
 # CORE METRICS
@@ -36,7 +56,7 @@ attack_vectors = Counter(e.get("attack_vector", "unknown") for e in events)
 techniques = Counter(e.get("mitre", "T0000") for e in events)
 
 # -----------------------------
-# SOC HEALTH SCORE (REAL MODEL)
+# SOC HEALTH SCORE
 # -----------------------------
 alert_ratio = len(alerts) / (total_events + 1)
 incident_ratio = len(incidents) / (total_events + 1)
@@ -47,45 +67,28 @@ soc_health_score = round(
 )
 
 # -----------------------------
-# EXECUTIVE REPORT
+# REPORT
 # -----------------------------
 report = {
     "timestamp": datetime.utcnow().isoformat() + "Z",
     "total_events": total_events,
     "alerts": len(alerts),
     "incidents": len(incidents),
-
     "top_attack_vectors": attack_vectors.most_common(5),
     "top_mitre_techniques": techniques.most_common(5),
-
     "soc_health_score": soc_health_score,
-
     "risk_level": (
         "LOW" if soc_health_score > 80 else
         "MEDIUM" if soc_health_score > 50 else
         "HIGH"
-    ),
-
-    "recommendations": [
-        "Increase identity-based anomaly detection coverage",
-        "Improve Kubernetes runtime visibility",
-        "Enhance EDR signal correlation",
-        "Tune alert thresholds to reduce noise"
-    ]
+    )
 }
 
-# -----------------------------
-# SAVE CURRENT METRICS
-# -----------------------------
 with open("soc_metrics.json", "w") as f:
-    json.dump(report, f, indent=4)
+    json.dump(report, f, indent=2)
 
-# -----------------------------
-# APPEND TO HISTORY (NEW)
-# -----------------------------
-history_file = "soc_metrics_history.jsonl"
+print(json.dumps(report, indent=2))
 
-with open(history_file, "a") as f:
+with open("soc_metrics_history.jsonl", "a") as f:
     f.write(json.dumps(report) + "\n")
 
-print(json.dumps(report, indent=4))

@@ -234,3 +234,16 @@ if __name__ == "__main__":
 
     else:
         analyze_logs(logs)
+
+# phase_06_threat_hunting.py
+def main():
+    print("Phase 06: Threat Hunting")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 06 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

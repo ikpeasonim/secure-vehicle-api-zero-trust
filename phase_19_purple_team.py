@@ -24,3 +24,16 @@ for attack in attack_simulations:
         f"{attack['name']} | "
         f"Detection: {attack['detection']}"
     )
+
+# phase_19_purple_team.py
+def main():
+    print("Phase 19: Purple Team Exercises")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 19 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

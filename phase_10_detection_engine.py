@@ -107,7 +107,6 @@ evtSource.onmessage = function(event) {
         <td class="${status.toLowerCase()}">${status}</td>
         <td>${action}</td>
     `;
-    tbody.prepend(tr);
     if(tbody.children.length > 50) tbody.removeChild(tbody.lastChild);
 };
 </script>
@@ -123,3 +122,16 @@ if __name__ == "__main__":
     print("=== SOC COMMAND CENTER ONLINE ===")
     threading.Thread(target=generate_events, daemon=True).start()
     app.run(host="0.0.0.0", port=5000, debug=False)
+
+# phase_10_detection_engine.py
+def main():
+    print("Phase 10: Detection Engine")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 10 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

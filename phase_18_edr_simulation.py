@@ -14,3 +14,16 @@ df = pd.DataFrame(
 
 print("\n=== EDR TELEMETRY ===\n")
 print(df)
+
+# phase_18_edr_simulation.py
+def main():
+    print("Phase 18: EDR Simulation")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 18 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

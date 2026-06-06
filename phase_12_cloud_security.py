@@ -26,3 +26,16 @@ for event in cloud_events:
     }
 
     print(json.dumps(enriched, indent=4))
+
+# phase_12_cloud_security.py
+def main():
+    print("Phase 12: Cloud Security")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 12 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

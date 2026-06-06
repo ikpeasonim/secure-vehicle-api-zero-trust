@@ -1,6 +1,167 @@
-{"event_id": "dd569aae-9fb8-487a-b584-36bbb583ff0e", "vehicle": "CAR456", "signals": ["AUTH_SPIKE"], "status": "ACTIVE", "severity": "LOW", "predicted_next": null, "confidence": 0.125, "recommended_action": "MONITOR", "event_count": 1, "correlated_signals": ["AUTH_SPIKE"], "graph_degree": {"AUTH_SPIKE": 1}, "last_event_time": "2026-06-05T22:22:47.819037Z"}
-{"event_id": "46c4c5f6-ae07-4a66-be52-bb63f82011b7", "vehicle": "CAR456", "signals": ["AUTH_SPIKE", "DEVICE_CHANGE"], "status": "ACTIVE", "severity": "MEDIUM", "predicted_next": null, "confidence": 0.25, "recommended_action": "MONITOR", "event_count": 2, "correlated_signals": ["AUTH_SPIKE", "AUTH_SPIKE\u2192DEVICE_CHANGE"], "graph_degree": {"AUTH_SPIKE": 2, "DEVICE_CHANGE": 1}, "last_event_time": "2026-06-05T22:22:47.819427Z"}
-{"event_id": "7e70d0a2-fb42-45b7-b878-b1508bc19f77", "vehicle": "CAR456", "signals": ["AUTH_SPIKE", "DEVICE_CHANGE", "VEHICLE_COMMAND_ACCESS"], "status": "ACTIVE", "severity": "MEDIUM", "predicted_next": "PRIVILEGE_ABUSE", "confidence": 0.375, "recommended_action": "MONITOR", "event_count": 3, "correlated_signals": ["AUTH_SPIKE", "AUTH_SPIKE\u2192DEVICE_CHANGE", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS"], "graph_degree": {"AUTH_SPIKE": 3, "DEVICE_CHANGE": 2, "VEHICLE_COMMAND_ACCESS": 1}, "last_event_time": "2026-06-05T22:22:47.819660Z"}
-{"event_id": "c58bb461-f075-4522-b0a5-f2c1e91b1655", "vehicle": "CAR456", "signals": ["AUTH_SPIKE", "DEVICE_CHANGE", "VEHICLE_COMMAND_ACCESS", "BASELINE_DEVIATION"], "status": "ACTIVE", "severity": "HIGH", "predicted_next": "PRIVILEGE_ABUSE", "confidence": 0.5, "recommended_action": "SOC INVESTIGATION", "event_count": 4, "correlated_signals": ["AUTH_SPIKE", "AUTH_SPIKE\u2192DEVICE_CHANGE", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION"], "graph_degree": {"AUTH_SPIKE": 4, "DEVICE_CHANGE": 3, "VEHICLE_COMMAND_ACCESS": 2, "BASELINE_DEVIATION": 1}, "last_event_time": "2026-06-05T22:22:47.819859Z"}
-{"event_id": "64fe9144-0327-4c96-9ef3-43c772c75708", "vehicle": "CAR456", "signals": ["AUTH_SPIKE", "DEVICE_CHANGE", "VEHICLE_COMMAND_ACCESS", "BASELINE_DEVIATION", "BRUTE_FORCE"], "status": "ACTIVE", "severity": "HIGH", "predicted_next": "PRIVILEGE_ABUSE", "confidence": 0.625, "recommended_action": "SOC INVESTIGATION", "event_count": 5, "correlated_signals": ["AUTH_SPIKE", "AUTH_SPIKE\u2192DEVICE_CHANGE", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE"], "graph_degree": {"AUTH_SPIKE": 5, "DEVICE_CHANGE": 4, "VEHICLE_COMMAND_ACCESS": 3, "BASELINE_DEVIATION": 2, "BRUTE_FORCE": 1}, "last_event_time": "2026-06-05T22:22:47.820006Z"}
-{"event_id": "f4c66d24-0f44-4f50-9e07-c5038812a35f", "vehicle": "CAR456", "signals": ["AUTH_SPIKE", "DEVICE_CHANGE", "VEHICLE_COMMAND_ACCESS", "BASELINE_DEVIATION", "BRUTE_FORCE", "PRIVILEGE_ABUSE"], "status": "ACTIVE", "severity": "CRITICAL", "predicted_next": "PRIVILEGE_ABUSE", "confidence": 0.75, "recommended_action": "IMMEDIATE LOCKDOWN", "event_count": 6, "correlated_signals": ["AUTH_SPIKE", "AUTH_SPIKE\u2192DEVICE_CHANGE", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE", "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE\u2192PRIVILEGE_ABUSE"], "graph_degree": {"AUTH_SPIKE": 6, "DEVICE_CHANGE": 5, "VEHICLE_COMMAND_ACCESS": 4, "BASELINE_DEVIATION": 3, "BRUTE_FORCE": 2, "PRIVILEGE_ABUSE": 1}, "last_event_time": "2026-06-05T22:22:47.820185Z"}
+[
+  {
+    "event_id": "dd569aae-9fb8-487a-b584-36bbb583ff0e",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE"
+    ],
+    "status": "ACTIVE",
+    "severity": "LOW",
+    "predicted_next": null,
+    "confidence": 0.125,
+    "recommended_action": "MONITOR",
+    "event_count": 1,
+    "correlated_signals": [
+      "AUTH_SPIKE"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.819037Z"
+  },
+  {
+    "event_id": "46c4c5f6-ae07-4a66-be52-bb63f82011b7",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE",
+      "DEVICE_CHANGE"
+    ],
+    "status": "ACTIVE",
+    "severity": "MEDIUM",
+    "predicted_next": null,
+    "confidence": 0.25,
+    "recommended_action": "MONITOR",
+    "event_count": 2,
+    "correlated_signals": [
+      "AUTH_SPIKE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 2,
+      "DEVICE_CHANGE": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.819427Z"
+  },
+  {
+    "event_id": "7e70d0a2-fb42-45b7-b878-b1508bc19f77",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE",
+      "DEVICE_CHANGE",
+      "VEHICLE_COMMAND_ACCESS"
+    ],
+    "status": "ACTIVE",
+    "severity": "MEDIUM",
+    "predicted_next": "PRIVILEGE_ABUSE",
+    "confidence": 0.375,
+    "recommended_action": "MONITOR",
+    "event_count": 3,
+    "correlated_signals": [
+      "AUTH_SPIKE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 3,
+      "DEVICE_CHANGE": 2,
+      "VEHICLE_COMMAND_ACCESS": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.819660Z"
+  },
+  {
+    "event_id": "c58bb461-f075-4522-b0a5-f2c1e91b1655",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE",
+      "DEVICE_CHANGE",
+      "VEHICLE_COMMAND_ACCESS",
+      "BASELINE_DEVIATION"
+    ],
+    "status": "ACTIVE",
+    "severity": "HIGH",
+    "predicted_next": "PRIVILEGE_ABUSE",
+    "confidence": 0.5,
+    "recommended_action": "SOC INVESTIGATION",
+    "event_count": 4,
+    "correlated_signals": [
+      "AUTH_SPIKE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 4,
+      "DEVICE_CHANGE": 3,
+      "VEHICLE_COMMAND_ACCESS": 2,
+      "BASELINE_DEVIATION": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.819859Z"
+  },
+  {
+    "event_id": "64fe9144-0327-4c96-9ef3-43c772c75708",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE",
+      "DEVICE_CHANGE",
+      "VEHICLE_COMMAND_ACCESS",
+      "BASELINE_DEVIATION",
+      "BRUTE_FORCE"
+    ],
+    "status": "ACTIVE",
+    "severity": "HIGH",
+    "predicted_next": "PRIVILEGE_ABUSE",
+    "confidence": 0.625,
+    "recommended_action": "SOC INVESTIGATION",
+    "event_count": 5,
+    "correlated_signals": [
+      "AUTH_SPIKE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 5,
+      "DEVICE_CHANGE": 4,
+      "VEHICLE_COMMAND_ACCESS": 3,
+      "BASELINE_DEVIATION": 2,
+      "BRUTE_FORCE": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.820006Z"
+  },
+  {
+    "event_id": "f4c66d24-0f44-4f50-9e07-c5038812a35f",
+    "vehicle": "CAR456",
+    "signals": [
+      "AUTH_SPIKE",
+      "DEVICE_CHANGE",
+      "VEHICLE_COMMAND_ACCESS",
+      "BASELINE_DEVIATION",
+      "BRUTE_FORCE",
+      "PRIVILEGE_ABUSE"
+    ],
+    "status": "ACTIVE",
+    "severity": "CRITICAL",
+    "predicted_next": "PRIVILEGE_ABUSE",
+    "confidence": 0.75,
+    "recommended_action": "IMMEDIATE LOCKDOWN",
+    "event_count": 6,
+    "correlated_signals": [
+      "AUTH_SPIKE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE",
+      "AUTH_SPIKE\u2192DEVICE_CHANGE\u2192VEHICLE_COMMAND_ACCESS\u2192BASELINE_DEVIATION\u2192BRUTE_FORCE\u2192PRIVILEGE_ABUSE"
+    ],
+    "graph_degree": {
+      "AUTH_SPIKE": 6,
+      "DEVICE_CHANGE": 5,
+      "VEHICLE_COMMAND_ACCESS": 4,
+      "BASELINE_DEVIATION": 3,
+      "BRUTE_FORCE": 2,
+      "PRIVILEGE_ABUSE": 1
+    },
+    "last_event_time": "2026-06-05T22:22:47.820185Z"
+  }
+]

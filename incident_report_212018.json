@@ -1,0 +1,527 @@
+{
+    "generated_at": "2026-06-06T21:20:18.321004",
+    "total_logs": 50,
+    "identities": {
+        "developer": {
+            "risk_score": 0,
+            "vehicles_targeted": [
+                "CAR456",
+                "CAR123",
+                "CAR999"
+            ],
+            "event_count": 48,
+            "events": [
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "developer",
+                    "success": true,
+                    "timestamp": "2026-06-05T15:21:36.079749+00:00",
+                    "vehicle_id": "CAR123"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:28:31.917656+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "developer",
+                    "success": true,
+                    "timestamp": "2026-06-05T15:51:20.875742+00:00",
+                    "vehicle_id": "CAR123"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:51:20.943519+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:51:20.986002+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:51:21.035362+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:55:15.595894+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:55:15.662586+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T15:55:15.713969+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:00:27.168990+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:00:27.215960+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:13:19.236687+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:13:19.284792+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:13:19.338614+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:16:10.362580+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:16:10.465640+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:16:10.527793+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:19:38.824864+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:19:44.283373+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:19:46.062684+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "developer",
+                    "success": true,
+                    "timestamp": "2026-06-05T16:24:28.632897+00:00",
+                    "vehicle_id": "CAR123"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:24:28.710999+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:29:39.680065+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:29:41.535854+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:29:42.422879+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:31:34.883708+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:31:36.658792+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:31:38.180424+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:37:38.607527+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:41:35.483238+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:46:13.717956+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:46:19.510718+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:46:21.142639+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:58:15.074160+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:58:20.622923+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T16:58:21.895392+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:04:02.624087+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:04:14.941950+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:07:15.761722+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:07:21.997814+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:10:42.139572+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:10:47.156587+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:11:34.384504+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:11:38.289204+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "authorization_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "unauthorized",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-05T17:13:16.972568+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "developer",
+                    "success": true,
+                    "timestamp": "2026-06-06T19:48:56.845731+00:00",
+                    "vehicle_id": "CAR123"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": "not_found",
+                    "role": "developer",
+                    "success": false,
+                    "timestamp": "2026-06-06T19:48:56.923493+00:00",
+                    "vehicle_id": "CAR999"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|0f11c9ecaecabe613512ae472855ae9cb7d9639bc8c3fe85e0357efbf4739cd4",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "developer",
+                    "success": true,
+                    "timestamp": "2026-06-06T19:56:05.316581+00:00",
+                    "vehicle_id": "CAR123"
+                }
+            ]
+        },
+        "support": {
+            "risk_score": 0,
+            "vehicles_targeted": [
+                "CAR456"
+            ],
+            "event_count": 2,
+            "events": [
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|df9eba2867e4c44575848ac3a77041156191359f0afce7fe5d0d267f3c73e17c",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "support",
+                    "success": true,
+                    "timestamp": "2026-06-05T16:36:48.857551+00:00",
+                    "vehicle_id": "CAR456"
+                },
+                {
+                    "action": "status_check",
+                    "client": "127.0.0.1|df9eba2867e4c44575848ac3a77041156191359f0afce7fe5d0d267f3c73e17c",
+                    "endpoint": "/status",
+                    "reason": null,
+                    "role": "support",
+                    "success": true,
+                    "timestamp": "2026-06-05T16:37:44.125324+00:00",
+                    "vehicle_id": "CAR456"
+                }
+            ]
+        }
+    },
+    "mitre_summary": {}
+}

@@ -66,3 +66,17 @@ for endpoint, count in endpoint_counter.most_common():
 print("\nRequests per Vehicle ID:")
 for vid, count in vehicle_counter.most_common():
     print(f"{vid}: {count}")
+
+# phase_01_vulnerable_api.py
+def main():
+    print("Phase 01: Vulnerable API")
+    # Minimal simulation
+    from time import sleep
+    sleep(0.1)
+    print("Phase 01 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

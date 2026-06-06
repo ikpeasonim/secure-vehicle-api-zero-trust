@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-06-06T17:22:18.857813Z",
+  "total_events": 6,
+  "alerts": 2,
+  "incidents": 3,
+  "top_attack_vectors": [
+    [
+      "AUTH_SPIKE",
+      6
+    ]
+  ],
+  "top_mitre_techniques": [
+    [
+      "T0000",
+      6
+    ]
+  ],
+  "soc_health_score": 55.71,
+  "risk_level": "MEDIUM"
+}

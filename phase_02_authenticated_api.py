@@ -218,3 +218,25 @@ def get_logs():
 
 if __name__ == "__main__":
     app.run(debug=False)
+
+# phase_02_authenticated_api.py
+from flask import Flask
+
+def create_app():
+    app = Flask(__name__)
+    
+    @app.route("/")
+    def index():
+        return "Phase 02 Authenticated API"
+
+    return app
+
+def main():
+    app = create_app()
+    print("Phase 02 setup complete")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")

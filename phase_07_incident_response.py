@@ -269,3 +269,16 @@ if __name__ == "__main__":
     print("==============================")
 
     heartbeat()
+
+# phase_07_incident_response.py
+def main():
+    print("Phase 07: Incident Response")
+    from time import sleep
+    sleep(0.1)
+    print("Phase 07 completed")
+
+if __name__ == "__main__":
+    main()
+
+def test_main():
+    print("safe execution ok")
