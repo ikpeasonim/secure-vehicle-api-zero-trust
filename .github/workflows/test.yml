@@ -30,3 +30,15 @@ jobs:
     - name: Run SOC Execution Tests
       run: |
         pytest tests/ -v
+    # =========================
+    # PHASE B — Security Scanning
+    # =========================
+    - name: Run Bandit Security Scan
+      run: |
+        pip install bandit
+        bandit -r . -lll
+
+    - name: Run pip-audit Dependency Scan
+      run: |
+        pip install pip-audit
+        pip-audit --ignore-insecure-hosts
