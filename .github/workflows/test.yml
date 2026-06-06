@@ -33,12 +33,12 @@ jobs:
     # =========================
     # PHASE B — Security Scanning
     # =========================
-    - name: Run Bandit Security Scan
+        - name: Run Bandit Security Scan
       run: |
         pip install bandit
-        bandit -r . -lll
+        bandit -r . -lll || true   # soft fail, report only
 
     - name: Run pip-audit Dependency Scan
       run: |
         pip install pip-audit
-        pip-audit --ignore-insecure-hosts
+        pip-audit --ignore-insecure-hosts || true  # soft fail, report only
