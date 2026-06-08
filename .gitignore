@@ -1,5 +1,13 @@
-venv/
+# Test artifacts
+.coverage
+.pytest_cache/
+
+# Python cache
 __pycache__/
-*.pyc
-.env
-.DS_Store*.swp
+*.py[cod]
+
+# Generated reports
+executive_report_*.json
+
+# Generated visualizations
+attack_heatmap.png
