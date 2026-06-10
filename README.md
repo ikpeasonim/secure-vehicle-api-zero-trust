@@ -617,15 +617,47 @@ This platform includes simulations for modern SOC detection workflows such as:
 
 # 📸 Screenshots
 
-## SOC Dashboard
+# 📸 Security Analytics Gallery
+
+## 🧭 SOC Command Dashboard
+Real-time security operations visibility across API, identity, and detection layers.
 
 ![SOC Dashboard](screenshots/phase10_soc_dashboard.png)
 
 ---
 
-## ATT&CK Heatmap
+## 🔥 MITRE ATT&CK Heatmap
+Visualization of detection coverage mapped to adversary techniques.
 
-![ATTACK Heatmap](screenshots/phase14_attack_heatmap.png)
+![ATT&CK Heatmap](screenshots/phase14_attack_heatmap.png)
+
+---
+
+## 📊 Behavioral Analytics — Requests per Endpoint
+Traffic analysis and anomaly detection across API surfaces.
+
+![Endpoint Traffic](screenshots/requests_per_endpoint.png)
+
+---
+
+## 🚗 Vehicle Activity Distribution
+Identity-based segmentation and request attribution across vehicles.
+
+![Vehicle Activity](screenshots/requests_per_vehicle.png)
+
+---
+
+## ⚠️ Security Failure Analysis
+Detection of failed access attempts and potential attack patterns.
+
+![Security Failures](screenshots/security_failures.png)
+
+---
+
+## 🤖 ML Anomaly Detection Results
+Machine learning-based detection of behavioral outliers and suspicious activity.
+
+![ML Detection](screenshots/phase11_ml_detection.png)
 
 ---
 
