@@ -22,6 +22,16 @@ socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
 
 bus = EventBus()
 
+# =========================
+# CAR STATE (HEATMAP DATA)
+# =========================
+car_state = {
+    "CAR100": {"risk": 0, "severity": "LOW"},
+    "CAR101": {"risk": 0, "severity": "LOW"},
+    "CAR102": {"risk": 0, "severity": "LOW"},
+    "CAR103": {"risk": 0, "severity": "LOW"},
+    "CAR104": {"risk": 0, "severity": "LOW"},
+}
 
 # =========================================================
 # AUTH
@@ -49,6 +59,14 @@ def dashboard():
 @app.route("/soc")
 def soc_dashboard():
     return render_template("soc_dashboard.html")
+
+@app.route("/heatmap")
+def heatmap():
+    return jsonify(car_state)
+
+@app.route("/heatmap-ui")
+def heatmap_ui():
+    return render_template("heatmap.html")
 
 
 # =========================================================
@@ -106,6 +124,17 @@ def ingest():
             "timestamp": result.get("timestamp")
         }
 
+
+        normalized = {
+            "user": event["user"],
+            "action": event["action"],
+            "vehicle_id": event["vehicle_id"],
+            "risk_score": result.get("risk_score", 0),
+            "severity": result.get("severity", "LOW"),
+            "alert": result.get("alert", False),
+            "timestamp": result.get("timestamp")
+        }
+
         # Emit CAR-level dashboard update
         socketio.emit("car_update", {
             "vehicle_id": normalized["vehicle_id"],
@@ -156,6 +185,15 @@ def ingest():
         "is_spike": spike["is_spike"],
         "timestamp": normalized["timestamp"]
         })
+    # =========================
+    # UPDATE CAR HEATMAP STATE
+    # =========================
+    car_id = normalized["vehicle_id"]
+
+    if car_id in car_state:
+        car_state[car_id]["risk"] += normalized["risk_score"]
+        car_state[car_id]["severity"] = normalized["severity"]
+
 
 # =========================================================
 # SOCKET EVENTS

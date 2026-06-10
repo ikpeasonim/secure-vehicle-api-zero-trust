@@ -13,6 +13,7 @@ EVENTS = [
 
 VEHICLES = ["CAR100", "CAR101", "CAR102", "CAR103", "CAR104"]
 
+
 def generate_event():
     return {
         "user": "analyst",
@@ -21,7 +22,21 @@ def generate_event():
         "auth": True
     }
 
-while True:
-    r = requests.post("http://localhost:5000/ingest", json=generate_event())
-    print(r.json())
+
+url = "http://localhost:5000/ingest"
+
+for i in range(20):  # prevent infinite loop
+    try:
+        r = requests.post(url, json=generate_event(), timeout=5)
+
+        print("\n--- EVENT ---")
+        print("STATUS:", r.status_code)
+        print("RAW:", r.text)
+
+        if r.headers.get("content-type", "").startswith("application/json"):
+            print("JSON:", r.json())
+
+    except Exception as e:
+        print("Request failed:", str(e))
+
     time.sleep(0.5)

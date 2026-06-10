@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAR Heatmap</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0b0f14;
+            color: white;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .car {
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            background: green;
+            transition: 0.3s;
+        }
+
+        .LOW { background: #2ecc71; }
+        .MEDIUM { background: #f1c40f; }
+        .HIGH { background: #e67e22; }
+        .CRITICAL { background: #e74c3c; }
+    </style>
+</head>
+<body>
+
+<h2>🚗 Real-Time CAR Heatmap</h2>
+
+<div class="grid">
+    <div id="CAR100" class="car">CAR100</div>
+    <div id="CAR101" class="car">CAR101</div>
+    <div id="CAR102" class="car">CAR102</div>
+    <div id="CAR103" class="car">CAR103</div>
+    <div id="CAR104" class="car">CAR104</div>
+</div>
+
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script>
+    const socket = io();
+
+    socket.on("car_heatmap", (data) => {
+        for (const car in data) {
+            const el = document.getElementById(car);
+            if (!el) continue;
+
+            el.className = "car " + data[car].severity;
+            el.innerText = car + "\nRISK: " + data[car].risk;
+        }
+    });
+</script>
+
+</body>
+</html>
