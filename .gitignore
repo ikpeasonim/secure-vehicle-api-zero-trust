@@ -1,73 +1,40 @@
-# ---------------------------
-# Python
-# ---------------------------
+# Python cache
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
 
-# ---------------------------
-# Virtual Environments
-# ---------------------------
+# Virtual environments
 venv/
-.venv/
-env/
 .env
 
-# ---------------------------
-# Testing & Coverage
-# ---------------------------
+# Testing
 .pytest_cache/
 .coverage
 coverage.xml
 htmlcov/
 
-# ---------------------------
 # Logs
-# ---------------------------
 *.log
 
-# ---------------------------
-# Runtime Data
-# ---------------------------
+# Runtime data
 data/api_logs.json
-
 soc_events.json
 soc_events.jsonl
-
 soc_metrics.json
 soc_metrics_history.jsonl
-
 incidents_store.json
 
-# ---------------------------
-# Generated Reports
-# ---------------------------
+# Generated SOC reports
 executive_report_*.json
 incident_report_*.json
 soc_incident_report_*.json
 
-# ---------------------------
-# Generated Output Directories
-# ---------------------------
+# Generated outputs
 outputs/
 reports/
 
-# ---------------------------
-# Generated Visualizations
-# ---------------------------
+# Generated images
 attack_heatmap.png
 tests/attack_heatmap.png
 
-# ---------------------------
-# OS Files
-# ---------------------------
+# OS files
 .DS_Store
-Thumbs.db
-
-# ---------------------------
-# Editor Files
-# ---------------------------
-*.swp
-*.swo
-*~
