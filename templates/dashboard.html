@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SOC Command Center</title>
-
+    <title>Splunk-Style SOC Command Center</title>
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 
     <style>
@@ -10,16 +9,28 @@
             background: #0b0f14;
             color: #00ff9f;
             font-family: monospace;
+            margin: 0;
         }
 
-        h1 {
+        .header {
+            padding: 10px;
+            border-bottom: 1px solid #1f2a33;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #searchBar {
+            width: 100%;
+            padding: 10px;
+            background: #0f141a;
+            border: 1px solid #1f2a33;
             color: #00ff9f;
+            font-size: 14px;
         }
 
         #stream {
             height: 80vh;
             overflow-y: auto;
-            border: 1px solid #1f2a33;
             padding: 10px;
             background: #0f141a;
         }
@@ -28,18 +39,20 @@
             padding: 6px;
             margin: 4px 0;
             border-left: 4px solid #00ff9f;
+            cursor: pointer;
         }
 
-        .CRITICAL { border-left-color: red; color: #ff4d4d; }
-        .HIGH { border-left-color: orange; color: orange; }
-        .MEDIUM { border-left-color: yellow; color: yellow; }
-        .LOW { border-left-color: #00ff9f; color: #00ff9f; }
+        .CRITICAL { color: #ff4d4d; border-left-color: red; }
+        .HIGH { color: orange; border-left-color: orange; }
+        .MEDIUM { color: yellow; border-left-color: yellow; }
+        .LOW { color: #00ff9f; border-left-color: #00ff9f; }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #1f2a33;
+        .hidden {
+            display: none;
+        }
+
+        .active {
+            background: #1a2633;
         }
     </style>
 </head>
@@ -47,18 +60,68 @@
 <body>
 
 <div class="header">
-    <h1>🚗 SOC COMMAND CENTER</h1>
-    <div>LIVE STREAMING ANALYTICS</div>
+    <div>🚗 SOC COMMAND CENTER</div>
+    <div>Splunk Search Mode ENABLED</div>
 </div>
+
+<input id="searchBar" placeholder="Search: severity=CRITICAL vehicle=CAR100 event=BRUTE_FORCE risk>200">
 
 <div id="stream"></div>
 
 <script>
-    const socket = io();
+const socket = io();
+const stream = document.getElementById("stream");
+const searchBar = document.getElementById("searchBar");
 
-    const stream = document.getElementById("stream");
+let events = [];
 
-    socket.on("soc_event", function(event) {
+// -----------------------------
+// SPLUNK-LIKE QUERY ENGINE
+// -----------------------------
+function matchQuery(event, query) {
+    if (!query) return true;
+
+    query = query.toLowerCase();
+
+    let filters = query.split(" ");
+
+    for (let f of filters) {
+
+        if (f.includes("=")) {
+            let [key, value] = f.split("=");
+            if ((event[key] || "").toString().toLowerCase() !== value) return false;
+        }
+
+        else if (f.includes(">")) {
+            let [key, value] = f.split(">");
+            if (parseInt(event[key]) <= parseInt(value)) return false;
+        }
+
+        else if (f.includes("<")) {
+            let [key, value] = f.split("<");
+            if (parseInt(event[key]) >= parseInt(value)) return false;
+        }
+
+        else {
+            // free text match
+            if (!JSON.stringify(event).toLowerCase().includes(f)) return false;
+        }
+    }
+
+    return true;
+}
+
+// -----------------------------
+// RENDER FUNCTION
+// -----------------------------
+function render() {
+    stream.innerHTML = "";
+
+    const query = searchBar.value;
+
+    events.slice().reverse().forEach(event => {
+
+        if (!matchQuery(event, query)) return;
 
         const div = document.createElement("div");
 
@@ -72,13 +135,29 @@
             ${event.severity}
         `;
 
-        stream.prepend(div);
+        div.onclick = () => {
+            document.querySelectorAll(".event").forEach(e => e.classList.remove("active"));
+            div.classList.add("active");
+            console.log("INSPECT EVENT:", event);
+        };
 
-        // keep last 100 events only
-        if (stream.children.length > 100) {
-            stream.removeChild(stream.lastChild);
-        }
+        stream.appendChild(div);
     });
+}
+
+// -----------------------------
+// LIVE STREAM
+// -----------------------------
+socket.on("soc_event", function(event) {
+    events.push(event);
+    render();
+});
+
+// -----------------------------
+// SEARCH INPUT
+// -----------------------------
+searchBar.addEventListener("input", render);
+
 </script>
 
 </body>
