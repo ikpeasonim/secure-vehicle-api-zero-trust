@@ -132,7 +132,7 @@ I --> J[SOC Dashboard]
 
 ---
 
-## Screenshots
+### Screenshots
 
 ## 📸 Security Analytics Intelligence Layer
 
