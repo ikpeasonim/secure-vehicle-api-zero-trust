@@ -301,21 +301,13 @@ MIT License
 | Chukwuemeke Ikpeasonim | Cybersecurity Engineering, SOC Operations, Detection Engineering, Zero Trust Security | https://www.linkedin.com/in/chukwuemeke-ikpeasonim | https://github.com/switice       |
 | Christina James        | Security Architecture, Identity & Access Management                                   | https://www.linkedin.com/in/christinanjames        | https://github.com/phoenyxcipher |
 
-### Collaboration Acknowledgment
+## Collaboration Acknowledgment
 
 Secure Vehicle API: Zero Trust Security Operations Platform was collaboratively developed by Chukwuemeke Ikpeasonim and Christina James.
 
-The project combines expertise in:
+The project combines expertise in Zero Trust Architecture, Identity and Access Management, Detection Engineering, Threat Hunting, Incident Response, and Security Operations to demonstrate the evolution of a vulnerable vehicle API into a layered security ecosystem.
 
-* Zero Trust Architecture
-* Identity & Access Management
-* Detection Engineering
-* Threat Hunting
-* Incident Response
-* Security Operations
-* Security Architecture
-
-The platform demonstrates the evolution of a vulnerable API into a layered security ecosystem featuring authentication, authorization, detection engineering, threat intelligence, SOAR automation, identity federation, cloud security, Kubernetes security, EDR simulation, purple team operations, and AI-assisted SOC analysis.
+The resulting platform showcases authentication, authorization, threat detection, behavioral analytics, threat intelligence correlation, SOAR automation, identity federation, cloud security concepts, Kubernetes security monitoring, EDR simulation, and AI-assisted SOC workflows.
 
 ---
 
