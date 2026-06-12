@@ -46,3 +46,4 @@ dashboard_*.html
 data/engine_state.json
 data/incidents_store.json
 
+siem_phase10.db
