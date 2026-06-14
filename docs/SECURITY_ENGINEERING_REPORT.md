@@ -387,6 +387,9 @@ The final platform demonstrates:
 - Threat hunting
 - Incident response
 - SOAR automation
+- Identity federation
+- Cloud security monitoring
+- Endpoint visibility and EDR simulation
 - SOC monitoring
 - Executive reporting
 
