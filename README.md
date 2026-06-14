@@ -303,7 +303,7 @@ MIT License
 
 | Contributor            | Focus Area                                                                            | LinkedIn                                           | GitHub                           |
 | ---------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------- |
-| Chukwuemeke Ikpeasonim | Cybersecurity Engineering, SOC Operations, Detection Engineering, Zero Trust Security | https://www.linkedin.com/in/chukwuemeke-ikpeasonim | https://github.com/switice       |
+| Chukwuemeke Ikpeasonim | Cybersecurity Engineering, SOC Operations, Detection Engineering, Zero Trust Security | https://www.linkedin.com/in/chukwuemeke-ikpeasonim | https://github.com/ikpeasonim       |
 | Christina James        | Security Architecture, Identity & Access Management                                   | https://www.linkedin.com/in/christinanjames        | https://github.com/phoenyxcipher |
 
 ## Collaboration Acknowledgment
