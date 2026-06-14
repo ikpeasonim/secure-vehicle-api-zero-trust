@@ -68,10 +68,13 @@ J --> F
 
 ```mermaid
 flowchart TD
-    A[docs/] --> B[SECURITY_ENGINEERING_REPORT.md]
-    A --> C[ZERO_TRUST_MATURITY_MATRIX.md]
-    A --> D[MITRE_MAPPING.md]
+    ROOT[📁 docs]
+
+    ROOT --> A[📄 Security Engineering Report]
+    ROOT --> B[📄 Zero Trust Maturity Matrix]
+    ROOT --> C[📄 MITRE ATT&CK Mapping]
 ```
+
 ---
 
 ## Zero Trust Validation
