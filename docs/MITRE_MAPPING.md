@@ -18,7 +18,7 @@ This document maps Secure Vehicle API Zero Trust detections and simulated attack
 | Command Execution Abuse | T1059 | Command and Scripting Interpreter |
 | Lateral Movement Simulation | T1021 | Remote Services |
 | Suspicious Authentication Activity | T1078 | Valid Accounts |
-| Device Change Detection | T1098 | Account Manipulation |
+| Account Configuration Change Detection | T1098 | Account Manipulation |
 | Baseline Deviation Detection | T1036 | Masquerading |
 
 ---
