@@ -12,7 +12,7 @@
 
 Secure Vehicle API: Zero Trust Security Operations Platform is a cybersecurity engineering project that demonstrates the evolution of a vulnerable vehicle control API into a Zero Trust–aligned Security Operations ecosystem.
 
-The project progresses through twenty security phases covering Zero Trust Architecture, Detection Engineering, Threat Hunting, Incident Response, Threat Intelligence, SOAR Automation, Identity Security, Cloud Security, Kubernetes Security, Endpoint Detection and Response (EDR), Purple Team Operations, and AI-assisted SOC workflows.
+The project progresses through twenty security phases that collectively demonstrate the implementation of Zero Trust Architecture through Detection Engineering, Threat Hunting, Incident Response, Threat Intelligence, SOAR Automation, Identity Security, Cloud Security, Kubernetes Security, Endpoint Detection and Response (EDR), Purple Team Operations, and AI-assisted SOC workflows.
 
 Using a vehicle API as the attack surface, the platform demonstrates how modern security teams implement layered defensive controls, continuous monitoring, threat detection, automated response, and security analytics across an evolving enterprise environment.
 
@@ -312,7 +312,7 @@ Secure Vehicle API: Zero Trust Security Operations Platform was collaboratively 
 
 The project combines expertise in Zero Trust Architecture, Identity and Access Management, Detection Engineering, Threat Hunting, Incident Response, and Security Operations to demonstrate the evolution of a vulnerable vehicle API into a layered security ecosystem.
 
-The resulting platform showcases authentication, authorization, threat detection, behavioral analytics, threat intelligence correlation, SOAR automation, identity federation, cloud security concepts, Kubernetes security monitoring, EDR simulation, and AI-assisted SOC workflows.
+The resulting platform demonstrates the practical application of Zero Trust principles across identity, detection, response, automation, cloud-native security, and SOC operations within a simulated cyber-physical environment.
 
 ---
 
