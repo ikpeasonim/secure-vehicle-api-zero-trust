@@ -1,7 +1,12 @@
 # Security Engineering Report
 ## Secure Vehicle API – Zero Trust Security Evolution
 
-Author: Chukwuemeke Ikpeasonim, CISM, SecurityX
+## Authors
+
+| Name | Focus Area | LinkedIn | GitHub |
+|------|------------|----------|--------|
+| Chukwuemeke Ikpeasonim | Cybersecurity Engineering, SOC Operations, Detection Engineering, Zero Trust Security | https://www.linkedin.com/in/chukwuemeke-ikpeasonim | https://github.com/ikpeasonim |
+| Christina James | Security Architecture, Identity & Access Management | https://www.linkedin.com/in/christinanjames | https://github.com/phoenyxcipher |
 
 ---
 
