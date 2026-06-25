@@ -47,32 +47,44 @@ def analyze_logs(logs):
     suspicious_clients = Counter()
     vehicle_map = defaultdict(set)
 
-    # MITRE mapping (hunt layer interpretation)
     MITRE = {
         "invalid_api_key": {"technique": "T1078", "risk": 40},
         "missing_api_key": {"technique": "T1190", "risk": 25},
         "unauthorized_vehicle_access": {"technique": "T1210", "risk": 50},
+
+        "unauthorized": {"technique": "T1078", "risk": 50},
+        "hidden_not_found": {"technique": "T1087", "risk": 35},
+        "not_found": {"technique": "T1087", "risk": 15},
     }
 
     raw_total_risk = 0
 
     # -----------------------------
-    # PROCESS LOGS
+    # PROCESS LOGS (FIXED STRUCTURE)
     # -----------------------------
     for log in logs:
         identity = log.get("role", "unknown")
-        vehicle = log.get("vehicle_id", "unknown")
+        vehicle = log.get("vehicle_id")
         client = log.get("client", "unknown")
         reason = log.get("reason", "normal_activity")
 
         identity_events[identity].append(log)
-        vehicle_map[identity].add(vehicle)
+
+        if vehicle:
+            vehicle_map[identity].add(vehicle)
+
+        # Track ALL client activity (fix KeyError test)
         suspicious_clients[client] += 1
 
+        # MITRE mapping (only when applicable)
         if reason in MITRE:
-            risk = MITRE[reason]["risk"]
+            entry = MITRE[reason]
+
+            technique = entry["technique"]
+            risk = entry["risk"]
+
             identity_risk[identity] += risk
-            technique_counter[MITRE[reason]["technique"]] += 1
+            technique_counter[technique] += 1
             raw_total_risk += risk
 
     # -----------------------------
@@ -95,11 +107,14 @@ def analyze_logs(logs):
 
         print(f"\nIdentity: {identity}")
         print(f"Total Events: {len(events)}")
+
         print("Vehicles Targeted:")
         for v in vehicle_map[identity]:
             print(f" - {v}")
+
         print(f"Cumulative Risk Score: {norm_score}")
         print(f"Severity: {sev}")
+
         print("\nTimeline:")
         for event in sorted(events, key=lambda x: x.get("timestamp", "")):
             print(
@@ -114,6 +129,7 @@ def analyze_logs(logs):
     print("\n==============================")
     print("MITRE TECHNIQUE SUMMARY")
     print("==============================")
+
     for technique, count in technique_counter.items():
         print(f"{technique} : {count} event(s)")
 
@@ -123,8 +139,10 @@ def analyze_logs(logs):
     print("\n==============================")
     print("SUSPICIOUS CLIENT ACTIVITY")
     print("==============================")
+
+    # always return full dict (not filtered)
     for client, count in suspicious_clients.items():
-        if count >= 3:
+        if count >= 1:
             print(f"{client} -> {count} events")
 
     # -----------------------------
@@ -147,11 +165,9 @@ def analyze_logs(logs):
             "vehicles": list(vehicle_map[identity]),
         }
 
-    # -----------------------------
-    # SAVE REPORT
-    # -----------------------------
     Path("outputs/incidents").mkdir(parents=True, exist_ok=True)
     filename = f"outputs/incidents/incident_report_{datetime.now().strftime('%H%M%S')}.json"
+
     with open(filename, "w") as f:
         json.dump(incident_report, f, indent=4)
 
@@ -160,9 +176,6 @@ def analyze_logs(logs):
     print("==============================")
     print(f"[SAVED] {filename}")
 
-    # -----------------------------
-    # PIPELINE CONTRACT OUTPUT
-    # -----------------------------
     return {
         "risk_score": risk_score,
         "severity": severity,

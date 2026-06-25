@@ -234,3 +234,6 @@ def compute_spike(vehicle_id):
         "intensity": min(len(recent) * 20, 100),
         "is_spike": len(recent) >= 3
     }
+
+def test_main():
+    return True

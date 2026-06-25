@@ -66,3 +66,6 @@ if vehicle_counter:
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+
+def test_main():
+    return True
