@@ -86,6 +86,14 @@ def test_status_rate_limit():
 
     return results
 
+def test_pipeline_execution():
+    import verify_security_pipeline as vp
+
+    if hasattr(vp, "run_pipeline"):
+        vp.run_pipeline()
+
+    if hasattr(vp, "main"):
+        vp.main()
 
 # =========================
 # MAIN
