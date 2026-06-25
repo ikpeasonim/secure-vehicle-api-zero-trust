@@ -68,6 +68,12 @@ def heatmap():
 def heatmap_ui():
     return render_template("heatmap.html")
 
+def test_app_boot():
+    import app
+
+    if hasattr(app, "app"):
+        _ = app.app
+
 
 # =========================================================
 # HEALTH CHECK

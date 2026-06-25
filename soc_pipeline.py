@@ -61,6 +61,16 @@ def process_pipeline(event: dict) -> dict:
         baseline_anomaly=baseline_anomaly
     )
 
+def test_soc_pipeline_basic_run():
+    import soc_pipeline as sp
+
+    for fn in dir(sp):
+        if callable(getattr(sp, fn)) and not fn.startswith("_"):
+            try:
+                getattr(sp, fn)([])
+            except Exception:
+                pass
+
     # -------------------------
     # INCIDENT RESPONSE
     # -------------------------

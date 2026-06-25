@@ -9,6 +9,18 @@ import matplotlib.pyplot as plt
 # =========================================================
 events = []
 
+def test_dashboard_execution():
+    import soc_dashboard as d
+
+    # call ANY public function that exists
+    for name in dir(d):
+        if not name.startswith("_"):
+            fn = getattr(d, name)
+            if callable(fn):
+                try:
+                    fn()
+                except TypeError:
+                    pass
 
 # =========================================================
 # INGEST

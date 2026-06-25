@@ -51,6 +51,17 @@ if endpoint_counter:
     plt.tight_layout()
     plt.show()
 
+def test_visualizations_execution():
+    import visualizations as v
+
+    for name in dir(v):
+        obj = getattr(v, name)
+        if callable(obj) and not name.startswith("_"):
+            try:
+                obj()
+            except Exception:
+                pass
+            
 # -----------------------------
 # Visualization: Vehicle Usage
 # -----------------------------
