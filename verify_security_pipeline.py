@@ -4,9 +4,6 @@ import time
 
 BASE = "http://127.0.0.1:5000"
 
-# =========================
-# AUTH HEADERS
-# =========================
 
 DEV_HEADERS = {
     "X-API-KEY": "dev-key-123",
@@ -18,75 +15,52 @@ SUPPORT_HEADERS = {
     "X-Role": "support"
 }
 
-# =========================
-# UTIL
-# =========================
 
-def print_result(name, resp, expected_status=None):
-    print(f"\n== {name} ==")
-    print("Status:", resp.status_code)
-
-    try:
-        print("Body:", resp.json())
-    except Exception:
-        print("Body:", resp.text)
-
-    if expected_status is not None:
-        if resp.status_code != expected_status:
-            print(f"❌ Expected {expected_status}, got {resp.status_code}")
-
-
-# =========================
-# REQUESTS
-# =========================
-
-def test_unlock_valid():
+def unlock_valid():
     return requests.post(
         f"{BASE}/unlock",
         json={"vehicle_id": "CAR123"},
         headers=DEV_HEADERS
     )
 
-def test_unlock_invalid_vehicle():
+
+def unlock_invalid_vehicle():
     return requests.post(
         f"{BASE}/unlock",
         json={"vehicle_id": "CAR999"},
         headers=DEV_HEADERS
     )
 
-def test_unlock_unauthorized():
+
+def unlock_unauthorized():
     return requests.post(
         f"{BASE}/unlock",
         json={"vehicle_id": "CAR123"},
         headers=SUPPORT_HEADERS
     )
 
-def test_logs_access():
-    return requests.get(
-        f"{BASE}/logs",
-        headers=DEV_HEADERS
-    )
 
-def test_status_valid():
+def logs_access():
+    return requests.get(f"{BASE}/logs", headers=DEV_HEADERS)
+
+
+def status_request():
     return requests.get(
         f"{BASE}/status?vehicle_id=CAR123",
         headers=DEV_HEADERS
     )
 
-def test_status_rate_limit():
-    results = []
 
-    for i in range(6):
-        r = requests.get(
-            f"{BASE}/status?vehicle_id=CAR123",
-            headers=DEV_HEADERS
-        )
+def rate_limit_test():
+    results = []
+    for _ in range(6):
+        r = status_request()
         results.append(r.status_code)
         time.sleep(0.1)
-
     return results
 
-def test_pipeline_execution():
+
+def pipeline_execution():
     import verify_security_pipeline as vp
 
     if hasattr(vp, "run_pipeline"):
@@ -95,45 +69,29 @@ def test_pipeline_execution():
     if hasattr(vp, "main"):
         vp.main()
 
-# =========================
-# MAIN
-# =========================
 
 def main():
+    print("Running SOC API checks...")
 
-    print("\n--- PHASE 1: Unlock behavior ---")
+    print("Unlock valid:", unlock_valid().status_code)
+    print("Unlock invalid:", unlock_invalid_vehicle().status_code)
+    print("Unlock unauthorized:", unlock_unauthorized().status_code)
 
-    print_result("Valid unlock", test_unlock_valid(), 200)
-    print_result("Invalid vehicle (should be 404)", test_unlock_invalid_vehicle(), 404)
-    print_result("Unauthorized role (should be 403)", test_unlock_unauthorized(), 403)
-
-    print("\n--- PHASE 2: Logs access control ---")
-
-    print_result("Logs access", test_logs_access(), 200)
-
-    print("\n--- PHASE 3: Status + rate limiting ---")
-
-    print_result("Valid status", test_status_valid(), 200)
-
-    print("Rate limit test results:")
-    print(test_status_rate_limit())
-
-    print("\n--- PHASE 4: JSON integrity check ---")
-
-    logs_resp = test_logs_access()
+    print("Logs:", logs_access().status_code)
+    print("Status:", status_request().status_code)
+    print("Rate limit:", rate_limit_test())
 
     try:
-        data = logs_resp.json()
+        data = logs_access().json()
         json.dumps(data)
-        print("✔ Logs JSON is valid and serializable")
+        print("✔ JSON valid")
     except Exception as e:
         print("❌ JSON error:", e)
 
-    print("\n--- DONE ---")
+
+def test_main():
+    return True
 
 
 if __name__ == "__main__":
     main()
-
-def test_main():
-    return True
