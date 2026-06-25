@@ -12,9 +12,26 @@ HEADERS = {"X-API-KEY": "dev-key-123"}
 # -------------------------
 def fetch_logs():
     try:
-        response = requests.get(f"{BASE_URL}/logs", headers=HEADERS, timeout=5)
+        response = requests.get(
+            f"{BASE_URL}/logs",
+            headers=HEADERS,
+            timeout=5
+        )
+
+        if response.status_code != 200:
+            print(
+                f"[ERROR] Log endpoint returned "
+                f"{response.status_code}"
+            )
+            return []
+
         data = response.json()
-        return data.get("logs", [])
+
+        if isinstance(data, dict):
+            return data.get("logs", [])
+
+        return []
+
     except Exception as e:
         print(f"[ERROR] Failed to fetch logs: {e}")
         return []
