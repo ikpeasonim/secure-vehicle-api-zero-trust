@@ -1,6 +1,32 @@
 from datetime import datetime, timezone
 from soc_scoring import normalize_score, compute_severity
 
+def normalize_stage_output(output, stage_name="unknown"):
+    """
+    Enforces a strict SOC output contract across all pipeline stages.
+    """
+
+    if isinstance(output, dict):
+        return {
+            "risk_score": int(output.get("risk_score", 0) or 0),
+            "signals": output.get("signals", []) or [],
+            "metadata": output.get("metadata", {}) or {
+                "stage": stage_name
+            }
+        }
+
+    if isinstance(output, list):
+        return {
+            "risk_score": 0,
+            "signals": output,
+            "metadata": {"stage": stage_name}
+        }
+
+    return {
+        "risk_score": 0,
+        "signals": [],
+        "metadata": {"stage": stage_name}
+    }
 
 def build_event(
     *,

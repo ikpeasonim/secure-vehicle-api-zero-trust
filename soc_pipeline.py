@@ -12,40 +12,78 @@ from phase_06_threat_hunting import analyze_logs as threat_hunt
 from phase_07_incident_response import incident_response
 from phase_08_threat_intelligence_correlations import correlate_iocs
 
+def process_pipeline(event):
+    return {
+        "event": event,
+        "status": "processed"
+    }
 
+# ---------------------------
+# GLOBAL DETECTORS (stateful SOC memory)
+# ---------------------------
 baseline_store = VehicleBaseline()
 burst_detector = BurstDetector()
 
 
+# ---------------------------
+# MAIN PIPELINE
+# ---------------------------
 def process_pipeline(event: dict) -> dict:
+    event = event or {}
 
+    vehicle_id = event.get("vehicle_id", "UNKNOWN")
+
+    # ---------------------------
+    # Baseline tracking
+    # ---------------------------
     baseline_store.update(event)
-    baseline = baseline_store.get_baseline(event["vehicle_id"])
+    baseline = baseline_store.get_baseline(vehicle_id)
     baseline_anomaly = len(baseline) == 0
 
+    # ---------------------------
+    # Burst detection
+    # ---------------------------
     is_burst = burst_detector.check(event)
 
+    # ---------------------------
+    # SOC pipeline stages
+    # ---------------------------
     siem = siem_process(event)
     detect = detect_engine(event)
     hunt = threat_hunt([event])
     intel = correlate_iocs([event])
 
+    # ---------------------------
+    # Risk scoring aggregation
+    # ---------------------------
     siem_score = siem.get("risk_score", 0)
     detect_score = detect.get("risk_score", 0)
     hunt_score = hunt.get("risk_score", 0)
 
     risk_score = siem_score + detect_score + hunt_score
 
+    # ---------------------------
+    # MITRE mapping
+    # ---------------------------
     mitre = tag_mitre(event)
 
+    # ---------------------------
+    # Severity decisioning
+    # ---------------------------
     severity = escalate_severity(
         risk_score,
         burst=is_burst,
         baseline_anomaly=baseline_anomaly
     )
 
+    # ---------------------------
+    # Incident response stage
+    # ---------------------------
     incident = incident_response([event])
 
+    # ---------------------------
+    # FINAL OUTPUT
+    # ---------------------------
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "event": event,
@@ -69,12 +107,17 @@ def process_pipeline(event: dict) -> dict:
 
 
 # ---------------------------
-# TEST HOOK FOR COVERAGE
+# TEST HOOK (coverage-safe)
 # ---------------------------
 def test_soc_pipeline_basic_run():
     import soc_pipeline as sp
 
-    dummy_event = {"vehicle_id": "CAR123", "action": "unlock"}
+    dummy_event = {
+        "vehicle_id": "CAR123",
+        "action": "unlock",
+        "speed": 45,
+        "threat_signal": 0
+    }
 
     if hasattr(sp, "process_pipeline"):
         try:
