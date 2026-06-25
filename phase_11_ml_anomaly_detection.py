@@ -100,3 +100,4 @@ def test_main():
     """Used by SOC pytest runner"""
     main()
     print("safe execution ok")
+

@@ -1,6 +1,6 @@
 import json
 from collections import defaultdict, Counter
-from datetime import datetime
+from datetime import datetime, UTC
 import matplotlib.pyplot as plt
 
 
@@ -98,7 +98,7 @@ def plot_event_types(data):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig("soc_event_types.png")
-    plt.close()
+    plt.close('all')
 
 
 def plot_identity_risk(data):
@@ -108,7 +108,7 @@ def plot_identity_risk(data):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig("soc_identity_risk.png")
-    plt.close()
+    plt.close('all')
 
 
 def plot_mitre(data):
@@ -118,7 +118,7 @@ def plot_mitre(data):
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.savefig("soc_mitre.png")
-    plt.close()
+    plt.close('all')
 
 
 # =========================================================
@@ -139,7 +139,7 @@ def export_dashboard():
     plot_mitre(metrics["technique_count"])
 
     report = {
-        "generated_at": datetime.utcnow().isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "total_events": len(events),
         "summary": {
             "total_risk": sum(metrics["risk_timeline"]),

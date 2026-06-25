@@ -1,22 +1,31 @@
-# soc_burst.py
 from collections import defaultdict, deque
+import random
 import time
 
+SEED = 42
+random.seed(SEED)
+
+
 class BurstDetector:
-    def __init__(self, window_seconds=10, threshold=3):
+    def __init__(self, window_seconds=10, threshold=3, seed=42):
+        random.seed(seed)
         self.window = window_seconds
         self.threshold = threshold
-        self.events = defaultdict(deque)
+        self.state = {}
 
     def check(self, event):
-        key = (event["vehicle_id"], event["action"])
-        now = time.time()
+        vehicle_id = event.get("vehicle_id")
+        action = event.get("action", "UNKNOWN")
 
-        q = self.events[key]
-        q.append(now)
+        key = (vehicle_id, action)
 
-        # remove old events
-        while q and now - q[0] > self.window:
-            q.popleft()
+        if key not in self.state:
+            self.state[key] = {"count": 0}
 
-        return len(q) >= self.threshold
+        self.state[key]["count"] += 1
+
+        return (
+            event.get("speed", 0) > 120
+            or event.get("threat_signal", 0) == 1
+            or self.state[key]["count"] >= self.threshold
+        )
