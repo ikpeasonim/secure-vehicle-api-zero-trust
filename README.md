@@ -293,6 +293,29 @@ pytest --cov=. --cov-report=term-missing
 
 ---
 
+## Mock Traffic Generator
+
+To populate the API with sample events for Phase 5, Phase 10, and Phase 11:
+
+1. Start the API:
+
+   python phase_03_authorization_api.py
+
+2. Run:
+
+   python mock_traffic.py
+
+This generates:
+- Successful vehicle operations
+- Unauthorized access attempts
+- Invalid vehicle requests
+- Log access events
+- Rate limiting events
+
+The resulting data can be analyzed by later detection and monitoring phases.
+
+--- 
+
 ## Technologies Used
 
 - Python
